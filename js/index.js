@@ -15,12 +15,12 @@
       whydont: " Why dont you go to the Bahamas?"
     },
     {
-      line: "When I grow up, I'm going to Bovine University.",
-      whydont: "Ralph Wiggum"
+      line: "the last time you called your mum?",
+      whydont: "Buy a book on Amazon"
     },
     {
-      line: "How can someone with glasses so thick be so stupid.",
-      character: "Bart Simpson"
+      line: "the last time you had a burger?",
+      character: "Go here"
     }
   ];
 
