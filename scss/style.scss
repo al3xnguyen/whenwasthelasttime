@@ -1,0 +1,94 @@
+@import "compass/css3";
+
+//=== IMPORTS ===
+@import url(http://fonts.googleapis.com/css?family=Patrick+Hand|Roboto:400,700);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
+//=== VARIABLES ===
+$colors: (
+  gray: #eee,
+  simpsonsYellow: #ffd90f,
+  textYellow: #ead520,
+  black: #333,
+  sky: #1192f0
+);
+
+//=== ANIMATIONS ===
+@include keyframes(spin){
+  from{ @include rotate(0deg); }
+  to{ @include rotate(360deg); }
+}
+
+//=== LAYOUT ===
+body {
+  padding: 3em;
+  background: map-get($colors, sky);
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  margin: 1em 0;
+  font-size: 3em;
+  text-align: center;
+  color: map-get($colors, gray);
+  @include text-shadow(-3px 3px 0px map-get($colors, black));
+}
+
+blockquote {
+  position: relative;
+  padding: 1.5em;
+  margin: 0 auto 1em;
+  width: 75%;
+  background-color: map-get($colors, textYellow);
+  border: 2px solid darken(map-get($colors, textYellow), 20);
+  @include border-radius(1em);
+  font: 1.5em "Patrick Hand", cursive;
+  line-height: 1.33em;
+  @include box-shadow(-5px 5px 0px map-get($colors, black));
+  
+  cite {
+    display: block;
+    margin-top: 0.5em;
+    text-align: right;
+    font-size: 0.75em;
+    &:before{
+      content: "- ";
+    }
+  }
+}
+
+button {
+  @include appearance(none);
+  position: absolute;
+  top: -1em;
+  right: -1em;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  font: 1em "Roboto", sans-serif;
+  padding: 0.5em 0.75em;
+  @include border-radius(50%);
+  background: shade(map-get($colors, gray), 25);
+  border-bottom: 2px solid shade(map-get($colors, gray), 50);
+  
+  &:before {
+    content: "\f021";
+    font-family: 'FontAwesome';
+  }
+  
+  &:active, &:focus {
+    outline: none;
+  }
+  
+  &:active, &:hover {
+    @include animation(spin 1s);
+  }
+}
+
+footer {
+  margin-top: 3em;
+  text-align: center;
+  color: map-get($colors, gray);
+  font-size: 0.75em;
+  line-height: 1.5em;
+}
