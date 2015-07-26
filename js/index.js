@@ -20,7 +20,7 @@
     },
     {
       line: "the last time you had a burger?",
-      character: "Go here"
+      character: "Go here to blah blahd "
     }
   ];
 
